@@ -1,0 +1,31 @@
+Use the current aquarium design as the starting point. Do not redesign the aquascape from scratch and do not replace the existing plants, fish, hardscape, substrate layout, equipment, or overall composition. Preserve the design choices that are already present.
+
+Now improve the scene by transforming the aquarium from its current flat, slightly cartoon-like appearance into a convincing photorealistic 3D aquarium.
+
+Change the camera presentation to a three-quarter perspective view, positioned slightly above and to one side of the aquarium, so that the front glass, side glass, depth of the tank, substrate thickness, and spatial arrangement of the plants and hardscape are clearly visible. The aquarium should feel physically deep and dimensional rather than like a flat 2D illustration.
+
+Increase the realism significantly. Replace any cartoon-like, simplified, artificial, or game-rendered appearance with realistic aquarium photography / high-end photorealistic 3D rendering.
+
+Improve the existing materials and details:
+
+make the aquarium glass realistically transparent with subtle reflections, refraction, highlights, and visible glass thickness
+make the water crystal clear but physically realistic, with believable underwater depth and light distortion
+give rocks natural rough textures, imperfections, and realistic coloration
+make driftwood look genuinely weathered, irregular, and waterlogged
+make the substrate consist of clearly visible individual aquasoil, sand, and gravel particles rather than smooth simplified surfaces
+make all aquatic plants botanically realistic, with individual leaves, natural growth patterns, subtle imperfections, overlapping foliage, and realistic variation in size and colour
+make the existing fish and shrimp anatomically realistic, correctly scaled, and naturally positioned within the aquarium
+
+Preserve the current filtration and CO2 elements where they already exist. Make the CO2 bubbles much more realistic, consisting of many tiny individual bubbles emerging from the diffuser and rising naturally through the water at slightly different speeds and trajectories.
+
+Add subtle continuous life to the existing scene: fine CO2 bubbles rising, fish swimming naturally through different depths, shrimp slowly grazing on plants or hardscape, floating plants moving gently at the surface, and leaves swaying slightly in the filtration current.
+
+Improve the lighting so it resembles a real premium planted aquarium photographed with a high-quality camera. Use realistic overhead aquarium LED lighting, natural shadows between plants, soft highlights on fish scales, subtle caustic patterns, realistic reflections on the glass, and believable falloff of light deeper into the tank.
+
+Keep the aquarium lush and visually appealing, but avoid making it unnaturally perfect. Introduce small natural irregularities and organic variation so the aquascape feels like a genuine mature freshwater aquarium.
+
+Maintain the existing composition and concept. This is an iterative realism and perspective upgrade, not a new aquarium design.
+
+Final visual target: photorealistic freshwater aquascape, true 3D spatial depth, realistic aquarium photography, physically believable glass and water, detailed natural materials, cinematic but natural lighting, subtle realistic animation.
+
+Avoid: flat front-facing 2D appearance, cartoon style, illustration, anime, game graphics, miniature toy appearance, plastic-looking plants, overly smooth rocks, exaggerated saturation, artificial neon colours, oversized fish, fake bubbles, fantasy elements, text, logos, labels, or watermark.

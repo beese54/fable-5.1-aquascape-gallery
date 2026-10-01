@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aquascape Gallery</title>
+<style>
+  :root {
+    --bg: #0b0f10;
+    --surface: #141a1c;
+    --line: #233033;
+    --text: #e6eeec;
+    --muted: #8a9a97;
+    --accent: #6fcf97;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    display: flex; flex-direction: column;
+    background: var(--bg); color: var(--text);
+    font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  header {
+    display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+    padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--surface);
+  }
+  h1 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .02em; }
+  nav { display: flex; gap: 4px; flex-wrap: wrap; }
+  nav button {
+    padding: 7px 12px; border: 1px solid transparent; border-radius: 6px;
+    background: none; color: var(--muted); font: inherit; cursor: pointer;
+  }
+  nav button:hover { color: var(--text); background: var(--line); }
+  nav button[aria-selected="true"] { color: var(--text); border-color: var(--accent); }
+  nav button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .hint { margin-left: auto; color: var(--muted); font-size: 12px; }
+  main { flex: 1; position: relative; min-height: 0; }
+  iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; }
+  .missing {
+    position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted);
+  }
+  @media (max-width: 640px) { .hint { display: none; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Aquascape Gallery</h1>
+  <nav role="tablist" aria-label="Aquarium designs"></nav>
+  <span class="hint">← → to switch</span>
+</header>
+<main></main>
+<script>
+  const scenes = [
+    ["1-nature", "Nature planted"],
+    ["2-iwagumi", "Minimal Iwagumi"],
+    ["3-driftwood-jungle", "Driftwood jungle"],
+    ["4-betta-showcase", "Betta showcase"],
+    ["5-high-tech", "High-tech"],
+  ];
+  const nav = document.querySelector("nav");
+  const main = document.querySelector("main");
+  let current = 0;
+
+  const buttons = scenes.map(([id, label], i) => {
+    const b = document.createElement("button");
+    b.role = "tab";
+    b.textContent = `${i + 1}. ${label}`;
+    b.onclick = () => show(i);
+    nav.append(b);
+    return b;
+  });
+
+  async function show(i) {
+    current = i;
+    buttons.forEach((b, j) => b.setAttribute("aria-selected", i === j));
+    const [id, label] = scenes[i];
+    const src = `scenes/${id}.html`;
+    history.replaceState(null, "", `#${id}`);
+    // Replace the iframe entirely so only one scene is ever animating.
+    main.replaceChildren();
+    const head = await fetch(src, { method: "HEAD", cache: "no-store" }).catch(() => null);
+    if (i !== current) return;
+    if (!head?.ok) {
+      main.innerHTML = `<div class="missing">${label} hasn't been generated yet.</div>`;
+      return;
+    }
+    const frame = document.createElement("iframe");
+    frame.title = label;
+    // Version by modification time so an edited scene never loads from cache.
+    frame.src = `${src}?v=${Date.parse(head.headers.get("Last-Modified")) || Date.now()}`;
+    main.append(frame);
+  }
+
+  addEventListener("keydown", e => {
+    if (e.key === "ArrowRight") show((current + 1) % scenes.length);
+    if (e.key === "ArrowLeft") show((current + scenes.length - 1) % scenes.length);
+  });
+
+  const start = scenes.findIndex(([id]) => `#${id}` === location.hash);
+  show(start < 0 ? 0 : start);
+</script>
+</body>
+</html>

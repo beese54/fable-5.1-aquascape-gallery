@@ -1,0 +1,112 @@
+[3-driftwood-jungle] started
+[5-high-tech] started
+[5-high-tech] 8m53s thinking
+[5-high-tech] 9m23s writing, 5 KB written
+[5-high-tech] 9m53s writing, 10 KB written
+[5-high-tech] 10m23s writing, 15 KB written
+Traceback (most recent call last):
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpcore2\_exceptions.py", line 13, in map_exceptions
+    yield
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpcore2\_backends\sync.py", line 127, in read
+    return self._sock.recv(max_bytes)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\allti\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1285, in recv
+    return self.read(buflen)
+           ~~~~~~~~~^^^^^^^^
+  File "C:\Users\allti\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1140, in read
+    return self._sslobj.read(len)
+           ~~~~~~~~~~~~~~~~~^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpx2\_transports\default.py", line 98, in map_httpcore_exceptions
+    yield
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpx2\_transports\default.py", line 124, in __iter__
+    yield from self._httpcore_stream
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpcore2\_sync\connection_pool.py", line 426, in __iter__
+    for chunk in iterator:
+                 ^^^^^^^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpcore2\_sync\http11.py", line 320, in __iter__
+    raise exc
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpcore2\_sync\http11.py", line 312, in __iter__
+    for chunk in iterator:
+                 ^^^^^^^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpcore2\_sync\http11.py", line 188, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpcore2\_sync\http11.py", line 200, in _receive_event
+    data = self._network_stream.read(self.READ_NUM_BYTES, timeout=timeout)
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpcore2\_backends\sync.py", line 125, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\allti\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpcore2\_exceptions.py", line 17, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore2.ReadError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\aquariums-v2\generate.py", line 177, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\aquariums-v2\generate.py", line 172, in main
+    total = sum(pool.map(run, names))
+  File "C:\Users\allti\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\allti\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\allti\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 456, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\allti\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\allti\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\aquariums-v2\generate.py", line 154, in run
+    return generate(name)
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\aquariums-v2\generate.py", line 109, in generate
+    for event in stream:
+                 ^^^^^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\anthropic\lib\streaming\_beta_messages.py", line 75, in __iter__
+    for item in self._iterator:
+                ^^^^^^^^^^^^^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\anthropic\lib\streaming\_beta_messages.py", line 136, in __stream__
+    for sse_event in self._raw_stream:
+                     ^^^^^^^^^^^^^^^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\anthropic\_streaming.py", line 48, in __iter__
+    for item in self._iterator:
+                ^^^^^^^^^^^^^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\anthropic\_streaming.py", line 70, in __stream__
+    for sse in iterator:
+               ^^^^^^^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\anthropic\_streaming.py", line 52, in _iter_events
+    yield from self._decoder.iter_bytes(self.response.iter_bytes())
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\anthropic\_streaming.py", line 385, in iter_bytes
+    for chunk in self._iter_chunks(iterator):
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\anthropic\_streaming.py", line 396, in _iter_chunks
+    for chunk in iterator:
+                 ^^^^^^^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpx2\_models.py", line 892, in iter_bytes
+    for raw_bytes in self.iter_raw():
+                     ~~~~~~~~~~~~~^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpx2\_models.py", line 947, in iter_raw
+    for raw_stream_bytes in self.stream:
+                            ^^^^^^^^^^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpx2\_client.py", line 143, in __iter__
+    yield from self._stream
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpx2\_transports\default.py", line 123, in __iter__
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\allti\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\allti\OneDrive\Documents\claude_fable_5.1_demo\.venv\Lib\site-packages\httpx2\_transports\default.py", line 115, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx2.ReadError: [WinError 10054] An existing connection was forcibly closed by the remote host

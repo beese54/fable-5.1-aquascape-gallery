@@ -1,0 +1,6 @@
+.env
+.venv/
+__pycache__/
+
+# Zipped copies of aquariums/ and aquariums-v2/, rebuildable
+share/
